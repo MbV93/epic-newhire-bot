@@ -15,7 +15,7 @@ Para esto, se analizaron las dudas más comúnes al momento de entrar a la empre
 Entre otras.
 
 Para resolver este problema se utilizará el **Microsoft Bot Framework**.
-![bot framework logo](https://acuvate.com/wp-content/uploads/2017/02/Microsoft-Botframework.fw_-thegem-person.png)
+<img src="https://acuvate.com/wp-content/uploads/2017/02/Microsoft-Botframework.fw_-thegem-person.png"/>
 
 Lo que nos permite crear un Chatbot totalmente personalizado y programado a nuestras necesidades y puedes ser usado por varios canales de comunicación. En este caso se utiliza su version web para integrarlo a nuestro sitio corporativo en Java.
 
