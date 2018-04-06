@@ -37,3 +37,20 @@ bot.dialog('/', function (session) {
     builder.Prompts.choice(session, "¿Con que te puedo ayudar?", "Redes y Conexión|Tickets y Soporte|Software|Hardware|Transporte", 
         { listStyle: builder.ListStyle.button });
 });
+
+bot.dialog('help', function(session) {
+    session.send('Hola, soy un asistente digital y estoy listo para ayudarte.');
+    session.send({
+            text: "Simplemente inicia una conversación conmigo enviandome un saludo y yo te respondere con opciones como estas: ",
+            attachments: [
+                {
+                    contentType: 'image/png',
+                    contentUrl: 'http://i.magaimg.net/img/30y0.png',
+                    name: 'bot_interaction'
+                }
+            ]
+        });
+        session.endDialog();
+}).triggerAction({
+    matches: /^help$/i
+});
