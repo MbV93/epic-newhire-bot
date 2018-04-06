@@ -1,7 +1,3 @@
-/*-----------------------------------------------------------------------------
-A simple echo bot for the Microsoft Bot Framework. 
------------------------------------------------------------------------------*/
-
 var restify = require('restify');
 var builder = require('botbuilder');
 var botbuilder_azure = require("botbuilder-azure");
@@ -37,5 +33,7 @@ var bot = new builder.UniversalBot(connector);
 bot.set('storage', tableStorage);
 
 bot.dialog('/', function (session) {
-    session.send('You said ' + session.message.text);
+    session.send('¡Hola! Bienvenido al asistente digital de soporte');
+    builder.Prompts.choice(session, "¿Con que te puedo ayudar?", "Redes y Conexión|Tickets y Soporte|Software|Hardware|Transporte", 
+        { listStyle: builder.ListStyle.button });
 });
