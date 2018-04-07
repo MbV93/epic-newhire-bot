@@ -36,6 +36,7 @@ bot.dialog('/', function (session) {
     session.send('¡Hola! Bienvenido al asistente digital de soporte');
     builder.Prompts.choice(session, "¿Con que te puedo ayudar?", "Redes y Conexión|Tickets y Soporte|Software|Hardware|Transporte", 
         { listStyle: builder.ListStyle.button });
+        session.endDialog();
 });
 
 bot.dialog('help', function(session) {
@@ -53,4 +54,22 @@ bot.dialog('help', function(session) {
         session.endDialog();
 }).triggerAction({
     matches: /^help$/i
+});
+
+bot.dialog('Transporte', function(session) {
+    session.send({
+            text: "Transporte al estacionamiento",
+            attachments: [
+                {
+                    contentType: 'image/png',
+                    contentUrl: 'http://images.clipartpanda.com/passenger-van-clipart-white_van-448x222.jpg',
+                    name: 'white_van'
+                }
+            ]
+        });
+    session.send('Los horarios de transporte al estacionamiento secundario son de 6:45AM a 9:45AM y de 3:45PM a 6:00PM');
+    session.send('Las vans salen cada 15 minutos.')
+    session.endDialog();
+}).triggerAction({
+    matches: /^Transporte$/i
 });
